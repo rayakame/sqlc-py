@@ -4,6 +4,7 @@ import os, stat, subprocess, sys
 def _bin():
     name = "sqlc.exe" if os.name == "nt" else "sqlc"
     path = resources.files(__package__) / "_vendor" / name
+    print(path)
     if os.name != "nt":
         mode = os.stat(path).st_mode
         if not (mode & stat.S_IXUSR):
